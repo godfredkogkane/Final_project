@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+nav {
+    background-color: #64ce3a;
+    font-size: larger;
+    padding:  20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f8f8f8;
+}
+
+/* .search-bar {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-bar button img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+} */
+
+/* Style for the search button inside the form */
+nav ul form button[type="submit"] {
+    background-color: #47c70c; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px; /* Add padding */
+    border-radius: 4px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+}
+
+/* Style for the search button icon */
+nav ul form button[type="submit"] i {
+    margin-right: 5px; /* Add margin to separate the icon from the text */
+}
+
+
+.snack {
+    text-align: center;
+    margin: 20px;
+    display: inline-block;
+}
+
+.snack img {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 40px; /* 20px top and bottom, 10px left and right */
+}
+
+.snack h2 {
+    margin-top: 10px;
+}
+
+.snack p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.snack button {
+    padding: 8px 16px;
+    background-color: #40ba30;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.snack button:hover {
+    background-color: #3d3c3c;
+}
+

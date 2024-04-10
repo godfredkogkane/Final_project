@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../frontend_images/fruitbackground3.png");
+}
+
+.container {
+    width: 320px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#signup-form {
+    display: block;
+}
+
+#login-form {
+    display: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #47c70c;
+    color: #fff;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #cba65b;
+}
+
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #47c70c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
