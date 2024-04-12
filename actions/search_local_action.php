@@ -1,12 +1,12 @@
 <?php
-include "../settings/connection.php"; 
+include_once "../settings/connection.php"; 
 
 if(isset($_GET['search_term']) && !empty($_GET['search_term'])){
     // Sanitize the search term to prevent SQL injection
     $searchTerm = mysqli_real_escape_string($conn, $_GET['search_term']);
 
     // SQL query to search for local dishes matching the search term
-    $LocaldishQuery = "SELECT * FROM localdishes WHERE LocalDishName LIKE '%$searchTerm%'";
+    $LocaldishQuery = "SELECT * FROM LocalDishes WHERE LocalDishName LIKE '%$searchTerm%'";
     
     $dishResult = mysqli_query($conn, $LocaldishQuery); // Execute the query
 

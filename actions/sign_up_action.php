@@ -16,7 +16,7 @@ function registerUser($conn) {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         // SQL query to insert user data into the database
-        $sql = "INSERT INTO users (Firstname, Lastname, Email, Phone, Pass_word) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO Users (Firstname, Lastname, Email, Phone, Pass_word) VALUES (?, ?, ?, ?, ?)";
 
         // Prepare the SQL statement
         $stmt = $conn->prepare($sql);

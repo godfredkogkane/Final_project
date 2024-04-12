@@ -1,10 +1,4 @@
-USE mysql;
 
-DROP DATABASE IF EXISTS Food_ordering_system;
-
-CREATE DATABASE Food_ordering_system;
-
-USE Food_ordering_system;
 
 -- Create the Users Table if it does not exist
 CREATE TABLE IF NOT EXISTS Users (
@@ -45,7 +39,7 @@ CREATE TABLE IF NOT EXISTS Feedback (
     FeedbackID INT AUTO_INCREMENT PRIMARY KEY,
     UserID INT NOT NULL,
     Message TEXT NOT NULL,
-    _Date DATE DEFAULT CURRENT_DATE,
+    _Date DATE DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE
 );
 

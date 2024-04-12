@@ -5,7 +5,7 @@ include "../settings/connection.php";
         // Sanitize the search term to prevent SQL injection
         $searchTerm = mysqli_real_escape_string($conn, $_GET['search_term']);
 
-        $continentalDishesQuery = "SELECT * FROM continentaldishes WHERE ContinentalDishName LIKE '%$searchTerm%'";// Execute the query
+        $continentalDishesQuery = "SELECT * FROM ContinentalDishes WHERE ContinentalDishName LIKE '%$searchTerm%'";// Execute the query
         $result = mysqli_query($conn, $continentalDishesQuery);
     
     // Display search results for contienetal dishes

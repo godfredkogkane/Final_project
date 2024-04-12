@@ -1,13 +1,13 @@
 <?php
 // Include database connection file
-include "../settings/connection.php";
+include_once "../settings/connection.php";
 
 if(isset($_GET['search_term']) && !empty($_GET['search_term'])){
     // Sanitize the search term to prevent SQL injection
     $searchTerm = mysqli_real_escape_string($conn, $_GET['search_term']);
 
     // SQL query to search for snacks matching the search term
-    $snacksQuery = "SELECT * FROM snacks WHERE SnackName LIKE '%$searchTerm%'";
+    $snacksQuery = "SELECT * FROM Snacks WHERE SnackName LIKE '%$searchTerm%'";
     
     $snacksResult = mysqli_query($conn, $snacksQuery); // Execute the query
 
