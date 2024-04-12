@@ -15,6 +15,7 @@ include "../settings/connection.php";
 // Initialize variables
 $feedback_id = "";
 $message = "";
+$edit_feedback_message = ""; // Variable to store feedback edit status message
 
 // Check if feedback_id is provided via GET
 if (isset($_GET['feedback_id'])) {
@@ -34,21 +35,19 @@ if (isset($_GET['feedback_id'])) {
         $row = $result->fetch_assoc();
         $message = $row['Message'];
     } else {
-        // Feedback not found, redirect back to feedback display page
-        header("Location: ../view/feedback_display.php");
-        exit();
+        // Feedback not found, set error message
+        $edit_feedback_message = "Feedback not found.";
     }
 
     // Close statement
     $stmt->close();
 } else {
-    // Feedback ID not provided, redirect back to feedback display page
-    header("Location: ../view/feedback_display.php");
-    exit();
+    // Feedback ID not provided, set error message
+    $edit_feedback_message = "Feedback ID not provided.";
 }
 
 // Check if form is submitted for editing
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edited_message'])) {
     // Sanitize the input
     $edited_message = $_POST['edited_message'];
 
@@ -60,22 +59,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if update was successful
     if ($stmt->affected_rows > 0) {
         // Feedback updated successfully, set success message
-        $_SESSION['edit_feedback_message'] = "Feedback updated successfully.";
+        $edit_feedback_message = "Feedback updated successfully.";
     } else {
         // Failed to update feedback, set error message
-        $_SESSION['edit_feedback_message'] = "Failed to update feedback.";
+        $edit_feedback_message = "Failed to update feedback.";
     }
 
     // Close statement
     $stmt->close();
 
-    // Close connection
-    $conn->close();
-
     // Redirect back to feedback display page
     header("Location: ../view/feedback_display.php");
     exit();
 }
+
+// Close connection
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +83,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Feedback</title>
-    <link rel="stylesheet" href="../css/edit_feedback.css">
+    <style>
+        body {
+            background-color: #64ce3a;
+            color: white;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: royalblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color:blue;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -92,11 +117,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <div class="container">
-    <form action="../actions/edit_feedback_action.php" method="post">
-            <label for="edited_message">Edit Message:</label><br>
-            <textarea id="edited_message" name="edited_message" rows="4" cols="50"><?php echo $message; ?></textarea><br>
-            <button type="submit">Submit</button>
-        </form>
+        <?php if (!empty($edit_feedback_message)) : ?>
+            <p><?php echo $edit_feedback_message; ?></p>
+        <?php endif; ?>
+
+        <?php if (empty($edit_feedback_message)) : ?>
+            <form action="../view/edit_feedback.php" method="post">
+                <input type="hidden" name="feedback_id" value="<?php echo $feedback_id; ?>">
+                <label for="edited_message">Edit Message:</label><br>
+                <textarea id="edited_message" name="edited_message" rows="4" cols="50"><?php echo $message; ?></textarea><br>
+                <button type="submit">Update</button>
+            </form>
+        <?php endif; ?>
     </div>
 </body>
 </html>
