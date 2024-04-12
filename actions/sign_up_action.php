@@ -1,6 +1,6 @@
 <?php
 // Include database connection file
-include_once "../settings/connection.php"; // Replace "db_connect.php" with the actual file name for your database connection
+include "../settings/connection.php"; // Replace "db_connect.php" with the actual file name for your database connection
 
 // Function to register a new user
 function registerUser($conn) {
