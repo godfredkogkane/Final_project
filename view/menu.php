@@ -12,14 +12,9 @@
         <ul> <li><a href="../view/menu.php">Menu</a></li>
             <li><a href="../view/home.php">Home</a></li>
             <li><a href="../view/user_db.php">Dashboard</a></li>
-            <!-- <li><a href="order.html">Order</a></li> -->
             <li><a href="../view/snacks.php">Snacks</a></li>
             <li><a href="../view/local_dishes.php">Local dishes</a></li>
             <li><a href="../view/continental_dishes.php">Continental</a></li>
-            <!-- <li class="search-bar">
-                <input type="text" placeholder="Search menu">
-                <button><i class="fas fa-search"></i></button>
-            </li> -->
         </ul>
     </nav>
 

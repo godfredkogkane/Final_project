@@ -12,7 +12,6 @@
     <nav>
         <ul>
             <li><a href="../view/home.php">Home</a></li>
-            <!-- <li><a href="order.html">Order</a></li> -->
             <li><a href="../view/snacks.php">Snacks</a></li>
             <li><a href="../view/local_dishes.php">Local dishes</a></li>
             <li><a href="../view/continental_dishes.php">Continental</a></li>

@@ -32,7 +32,6 @@ if (isset($_SESSION['success_message'])) {
                     <a href="../view/continental_dishes.php">Continental</a>
                 </div>
                 <li><a href="user_db.php">Dashboard</a></li>
-                <!-- <li><a href="order.html">Order</a></li> -->
             </li>
             <li class="dropdown">
                 <a href="#" class="dropbtn"> My account</a>
