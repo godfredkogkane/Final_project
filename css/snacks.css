@@ -73,11 +73,12 @@ nav ul form button[type="submit"] {
     height: 200px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 20px 10px; /* 20px top and bottom, auto left and right */
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+    margin-bottom: 20px;
 }
+
+
 
 .snack h2 {
     margin-top: 10px;

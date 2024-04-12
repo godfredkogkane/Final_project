@@ -3,14 +3,17 @@ body {
     margin: 0;
     padding: 0;
     background-image: url("../frontend_images/bgrd2.webp");
-
 }
 
 header {
-    background-color: #333;
+    background-color: #4CAF50; /* Green */
     color: #fff;
     padding: 20px;
     text-align: center;
+}
+
+header:hover {
+    background-color: #45a049; /* Darker green on hover */
 }
 
 section {
@@ -35,17 +38,15 @@ textarea {
 input[type="submit"],
 button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: blue;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-input[type="submit"] {
-    float: left;
-}
-
-button {
-    float: right;
+input[type="submit"]:hover,
+button:hover {
+    background-color: blueviolet;
 }
