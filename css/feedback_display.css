@@ -1,0 +1,40 @@
+/* Style for header */
+header {
+    text-align: center;
+    background-color: #3de053;
+    padding: 20px 0;
+}
+
+/* Style for feedback section */
+section {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Style for individual feedback entry */
+.feedback {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.feedback p {
+    margin: 5px 0;
+}
+
+/* Style for back to home button */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

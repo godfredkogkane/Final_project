@@ -1,15 +1,3 @@
-<?php
-// Start session (if not already started)
-session_start();
-
-// Check if success message is set
-if (isset($_SESSION['success_message'])) {
-    echo '<p style="color: red; text-align: center;">' . $_SESSION['success_message'] . '</p>';
-    // Unset the session variable to prevent it from being displayed again
-    unset($_SESSION['success_message']);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,11 +73,5 @@ if (isset($_SESSION['success_message'])) {
         <p>&copy; 2024 BB TastyCorner. All rights reserved.</p>
     </footer>
 </body>
-
-<!-- <script>
-    setTimeout(function() {
-        document.getElementById('success-message').style.display = 'none';
-    }, 5000); // Hide after 5 seconds (adjust as needed)
-</script> -->
 
 </html>
