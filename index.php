@@ -116,8 +116,6 @@
             <ul>
                 <li><a href="../view/signUp.php">Register</a></li>
                 <li><a href="../view/login.php">Login</a></li>
-                <!-- <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li> -->
             </ul>
         </nav>
     </header>
@@ -143,17 +141,8 @@
             </div>
         </section>
 
-        <!-- <section class="about">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget elit a justo vestibulum varius.</p>
-        </section> -->
+        
     </main>
-
-    <!-- <footer>
-        <p>&copy; 2024 BB TastyCorner. All rights reserved.</p>
-    </footer> -->
-
-    <!-- <script src="script.js"></script> -->
 </body>
 </html>
 

@@ -29,7 +29,13 @@
                     <a href="../view/logout.php">Logout</a>
                 </div>
             </li>
-            <li><a href="../view/feedback.php">Feedback</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Feedback</a>
+                <div class="dropdown-content">
+                <a href="../view/feedback.php">Submit</a>
+                <a href="../view/feedback_display.php">View</a>
+                </div>
+            </li>
         </ul>
     </nav>
 

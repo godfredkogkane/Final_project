@@ -8,19 +8,16 @@
 </head>
 <body>
     <header>
-        <h1>Feedback</h1>
+        <h1>Submit Feedback</h1>
     </header>
 
     <section>
         <h1 style="color: rgb(33, 214, 33);">We'd love to hear from you!</h1>
-        <!-- Feedback Form -->
         <form action="../actions/feedback_action.php" method="POST">
             <textarea name="message" rows="4" cols="50" placeholder="Enter your feedback here..." required></textarea><br>
             <input type="hidden" name="date" value="<?php echo date('Y-m-d'); ?>">
             <input type="submit" value="Submit Feedback">
         </form>
-
-        <!-- Back to Home button -->
         <button onclick="window.location.href='../view/home.php';">Back to Home</button>
     </section>
 </body>
