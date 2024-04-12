@@ -76,7 +76,7 @@ nav ul form button[type="submit"] {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 20px 40px; /* 20px top and bottom, 10px left and right */
+    margin: 20px 10px; /* 20px top and bottom, auto left and right */
 }
 
 .snack h2 {

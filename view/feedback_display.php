@@ -1,3 +1,19 @@
+<?php
+// Start the session
+session_start();
+
+// Include database connection file
+include "../settings/connection.php";
+
+// Check if the success parameter is present in the URL
+$success = isset($_GET['success']) ? $_GET['success'] : false;
+
+// Display success message if the feedback was successfully submitted
+if ($success) {
+    echo "<p style='color: red;'>Thank you for your feedback!</p>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,25 +27,13 @@
         <h1>All Feedback</h1>
     </header>
 
-    <?php
-// Check if the success parameter is present in the URL
-$success = isset($_GET['success']) ? $_GET['success'] : false;
-
-// Display success message if the feedback was successfully submitted
-if ($success) {
-    echo "<p style='color: red;'>Thank you for your feedback!</p>";
-}
-?>
     <section>
         <?php
-        // Include database connection file
-        include "../settings/connection.php";
-
         // Initialize $result variable
         $result = null;
 
-        // Retrieve feedback entries from the database along with the user's name
-        $sql = "SELECT Feedback.Message, Feedback._Date, Users.Firstname, Users.Lastname FROM Feedback JOIN Users ON Feedback.UserID = Users.UserID ORDER BY Feedback._Date DESC";
+        // Retrieve feedback entries from the database along with the user's name and ID
+        $sql = "SELECT Feedback.FeedbackID, Feedback.Message, Feedback._Date, Users.Firstname, Users.Lastname, Users.UserID FROM Feedback JOIN Users ON Feedback.UserID = Users.UserID ORDER BY Feedback._Date DESC";
         $result = $conn->query($sql);
 
         // Check for errors in SQL query execution
@@ -44,6 +48,20 @@ if ($success) {
                     echo "<p><strong>User: </strong>" . $row["Firstname"] . " " . $row["Lastname"] . "</p>";
                     echo "<p><strong>Message: </strong>" . $row["Message"] . "</p>";
                     echo "<p><strong>Date: </strong>" . $row["_Date"] . "</p>";
+                    // Check if 'UserID' key exists in the $row array
+                    if (isset($row['UserID'])) {
+                        // Add edit and delete buttons only for logged-in users
+                        if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['UserID']) {
+                            echo "<form action='../view/edit_feedback_action.php' method='post'>";
+                            echo "<input type='hidden' name='feedback_id' value='" . $row['FeedbackID'] . "'>"; // Updated here
+                            echo "<button type='submit'>Edit</button>";
+                            echo "</form>";
+                            echo "<form action='../actions/delete_feedback_action.php' method='post'>";
+                            echo "<input type='hidden' name='feedback_id' value='" . $row['FeedbackID'] . "'>"; // Updated here
+                            echo "<button type='submit'>Delete</button>";
+                            echo "</form>";
+                        }
+                    }
                     echo "</div>";
                 }
             } else {
