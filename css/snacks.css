@@ -37,46 +37,29 @@ nav ul li a:hover {
     color: #f8f8f8;
 }
 
-/* .search-bar {
-    display: inline-block;
-    margin-left: 20px;
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    display: inline-block; /* Add this to make the search button inline */
+    margin-right: 20px; /* Add margin to separate it from the other buttons */
 }
 
-.search-bar input[type="text"] {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+nav ul form {
+    display: inline-block; /* Make the form inline */
 }
 
-.search-bar button {
-    padding: 8px 12px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.search-bar button img {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-} */
-
-/* Style for the search button inside the form */
 nav ul form button[type="submit"] {
-    background-color: #47c70c; /* Background color */
-    color: #fff; /* Text color */
-    border: none; /* Remove border */
-    padding: 10px; /* Add padding */
-    border-radius: 4px; /* Add border radius */
-    cursor: pointer; /* Add cursor pointer */
+    background-color: #47c70c; 
+    color: #fff; 
+    border: none; 
+    padding: 10px;
+    border-radius: 4px; 
+    cursor: pointer; 
+    margin-top: 0; /* Remove the margin-top */
+    margin-left: 20px; /* Add margin to separate it from the other buttons */
 }
 
-/* Style for the search button icon */
-nav ul form button[type="submit"] i {
-    margin-right: 5px; /* Add margin to separate the icon from the text */
-}
 
 
 .snack {

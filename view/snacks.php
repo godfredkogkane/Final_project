@@ -16,7 +16,6 @@
             <li><a href="../view/local_dishes.php">Local dishes</a></li>
             <li><a href="../view/continental_dishes.php">Continental</a></li>
             <form action="../actions/search_snacks_action.php" method="GET">
-            <!-- <li class="search-bar"></li>  -->
                 <input type="text" name="search_term" placeholder="Search snacks">
                 <button><i class="fas fa-search"></i></button>
             </form>
@@ -54,7 +53,7 @@
     </div>
 
     <div class="snack">
-        <img src="../snack_images/coke.jpeg" alt="Yogurt">
+        <img src="../snack_images/coke.jpeg" alt="coke">
         <h2>Coca-Cola</h2>
         <p>Price: GHS 11.00</p>
         <a href="../actions/user_db_action.php?item_name=Coca-Cola&price=11.00"><button>Order</button></a>
@@ -62,7 +61,7 @@
     </div>
 
     <div class="snack">
-        <img src="../snack_images/water.jpeg" alt="Yogurt">
+        <img src="../snack_images/water.jpeg" alt="water">
         <h2>Mineral Water</h2>
         <p>Price: GHS 15.00</p>
         <a href="../actions/user_db_action.php?item_name=Mineral Water&price=15.00"><button>Order</button></a>

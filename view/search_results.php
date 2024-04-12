@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!-- <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
+    <!-- <link rel="stylesheet" href="../actions/search_results_action.php"> -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,7 +27,7 @@
             margin-bottom: 20px;
         }
 
-        .snack {
+        .snack { -->
             display: flex;
             align-items: center;
             border-bottom: 1px solid #ccc;
@@ -50,4 +51,4 @@
         }
     </style>
 </head>
-</html>
+</html> -->

@@ -61,6 +61,7 @@ nav {
 nav ul {
     list-style-type: none;
     text-align: center;
+    display: inline-block; /* Make the ul inline */
 }
 
 nav ul li {
@@ -79,9 +80,12 @@ nav ul li a:hover {
     color: #f8f8f8;
 }
 
+.nav-wrapper {
+    text-align: right; /* Align the content to the right */
+}
+
 .search-bar {
     display: inline-block;
-    margin-left: 20px;
 }
 
 .search-bar input[type="text"] {
@@ -97,6 +101,7 @@ nav ul li a:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 30px; /* Add margin to the top */
 }
 
 .search-bar button img {
